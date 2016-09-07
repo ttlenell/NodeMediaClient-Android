@@ -45,7 +45,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持多路直播流同时播放，理论最大32路
 
 ##直播串流器
-v1.2.3新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动相机连接手机热点,通过手机4G网络串流到RTMP服务器.  
+v1.2.3新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器.  
 手机端不进行编解码,只有网络IO,不占用CPU.
 
 ##关于多播
