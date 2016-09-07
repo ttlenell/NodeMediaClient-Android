@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     android:orientation="vertical"
-    tools:context="cn.nodemedia.nodemediaclient_demo.MainActivity">
+    tools:context="cn.nodemedia.nodemediaclient.MainActivity">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -101,5 +101,13 @@
         android:text="运行多播演示"
         android:id="@+id/button3"
         android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="运行串流演示" />
+
 
 </LinearLayout>

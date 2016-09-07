@@ -24,18 +24,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LivePlayerDemoActivity"
+        <activity
+            android:name=".LivePlayerDemoActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".LivePublisherDemoActivity"
             android:configChanges="orientation|screenSize"
-            />
-        <activity android:name=".LivePublisherDemoActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".NodePlayerDemoActivity"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".NodeStreamerDemoActivity"></activity>
 
-            />
-        <activity android:name=".NodePlayerDemoActivity"
-            android:configChanges="orientation|screenSize"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            />
+        <activity
+            android:name=".NodeStreamerDemoActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -12,7 +12,7 @@ import com.anthonycr.grant.PermissionsManager;
 import com.anthonycr.grant.PermissionsResultAction;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button playerBtn, encoderBtn,nodePlayerBtn;
+    Button playerBtn, encoderBtn,nodePlayerBtn,nodeStreamerBtn;
     EditText playUrl, pubUrl, bufferTime,maxBufferTime;
 
     @Override
@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         playerBtn = (Button) findViewById(R.id.button1);
         encoderBtn = (Button) findViewById(R.id.button2);
         nodePlayerBtn = (Button)findViewById(R.id.button3);
+        nodeStreamerBtn = (Button) findViewById(R.id.button4);
+
         playUrl = (EditText) findViewById(R.id.editTextPlay);
         pubUrl = (EditText) findViewById(R.id.editTextPublish);
         bufferTime = (EditText) findViewById(R.id.editText_bufferTime);
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         playerBtn.setOnClickListener(this);
         encoderBtn.setOnClickListener(this);
         nodePlayerBtn.setOnClickListener(this);
-
+        nodeStreamerBtn.setOnClickListener(this);
     }
 
 
@@ -71,6 +73,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button3:
                 MainActivity.this.startActivity(new Intent(MainActivity.this, NodePlayerDemoActivity.class));
+                break;
+            case R.id.button4:
+                MainActivity.this.startActivity(new Intent(MainActivity.this, NodeStreamerDemoActivity.class));
                 break;
         }
     }
