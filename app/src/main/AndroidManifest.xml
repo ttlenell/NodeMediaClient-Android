@@ -35,11 +35,8 @@
             android:name=".NodePlayerDemoActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".NodeStreamerDemoActivity"></activity>
-
         <activity
-            android:name=".NodeStreamerDemoActivity">
-        </activity>
+            android:name=".NodeStreamerDemoActivity" />
     </application>
 
 </manifest>
