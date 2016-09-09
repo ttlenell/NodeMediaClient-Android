@@ -21,6 +21,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * NEON/SSE指令集优化H.264软件编码器，性能强劲，兼容性极强
 * H.264支持Baseline及Main profile
 * 视频支持横屏16:9，竖屏9:16分辨率自动原画旋转
+* OpenGL摄像头预览窗,任意视图比例不失真
 * NEON优化AAC软件编码器，极少CPU占用，支持LC和HE profile，音质还原效果好
 * 支持环境背景噪音抑制，不再有沙沙声
 * 支持发布中途切换前后摄像头
