@@ -59,6 +59,9 @@ v1.2.3新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动�
 ##关于多播
 NodeMediaClien从第一个版本提交以来，Android端始终是以单例静态方法来实现播放和发布的功能，限制了多播的实现。自推出以来，不少客户也反馈了诸如多人会议、多路监控、直播间多人视频等需求。为了不影响旧版的使用，我们在Android端从v1.1.0版开始新增了NodePlayer类以提供同原来LivePlayer类一模一样的功能且支持多播。
 
+##文档
+http://www.nodemedia.cn/doc
+
 ##商用授权
 可在应用程序包名为cn.nodemedia.* 下试用体验  
 程序发布需商用授权，业务咨询请联系  
