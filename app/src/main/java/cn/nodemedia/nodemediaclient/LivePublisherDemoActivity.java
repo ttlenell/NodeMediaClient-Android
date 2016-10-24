@@ -75,7 +75,8 @@ public class LivePublisherDemoActivity extends AppCompatActivity implements View
 
         /**
          * 设置输出音频参数 bitrate 码率 32kbps aacProfile 音频编码复杂度
-         * 部分服务端不支持HE-AAC,会导致发布失败，如果服务端支持，直接用HE-AAC AAC_PROFILE_LC 低复杂度编码
+         * 部分服务端不支持HE-AAC,会导致发布失败，如果服务端支持，直接用HE-AAC
+         * AAC_PROFILE_LC 低复杂度编码
          * AAC_PROFILE_HE 高效能编码 ，能达到LC-AAC一半的码率传输相同的音质
          */
         LivePublisher.setAudioParam(32 * 1000, LivePublisher.AAC_PROFILE_HE);
@@ -121,8 +122,16 @@ public class LivePublisherDemoActivity extends AppCompatActivity implements View
         // LivePublisher.setKeyFrameInterval(2);
 
         /**
+         * 开启视频编码动态自适应码率,默认关闭
+         * 开启后,sdk内部会根据发送缓冲队列的长度来动态调整视频码率以适应当前带宽
+         * 会在上传带宽不足,网络频繁波动等情况下触发码率降低,画质会变差,但流畅度得以保证.
+         * SDK内部会根据网络状况变优自动提升回设定码率.
+         */
+//        LivePublisher.setDynamicRateEnable(true);
+
+        /**
          * 开始视频预览 cameraPreview ： 用以回显摄像头预览的GLSurfaceView对象，如果此参数传入null，则只发布音频
-         * 注意,如果做纯音频应用,请保证xml布局文件里不要放入GLSurfaceView控件,否则由于没有处理GLSurfaceView的渲染器会照成崩溃
+         * 注意,如果做纯音频应用,请保证xml布局文件里不要放入GLSurfaceView控件,否则由于没有处理GLSurfaceView的渲染器会造成崩溃
          *
          * camId： 摄像头初始id，LivePublisher.CAMERA_BACK 后置，LivePublisher.CAMERA_FRONT 前置
          * frontMirror: 是否启用前置摄像头镜像模式。当为true时，预览画面为镜像画面。当为false时，预览画面为原始画面
@@ -298,6 +307,18 @@ public class LivePublisherDemoActivity extends AppCompatActivity implements View
                     break;
                 case 2103:
                     Toast.makeText(LivePublisherDemoActivity.this, "截图保存失败", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2104:
+                    Toast.makeText(LivePublisherDemoActivity.this, "网络阻塞严重,无法继续推流,断开连接", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2300:
+                    Toast.makeText(LivePublisherDemoActivity.this, "摄像头和麦克风都不能打开,用户没有给予访问权限或硬件被占用", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2301:
+                    Toast.makeText(LivePublisherDemoActivity.this, "麦克风无法打开", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2302:
+                    Toast.makeText(LivePublisherDemoActivity.this, "摄像头无法打开", Toast.LENGTH_SHORT).show();
                     break;
                 case 3100:
                     // mic off

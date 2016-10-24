@@ -12,6 +12,11 @@ import java.text.SimpleDateFormat;
 import cn.nodemedia.NodeStreamer;
 import cn.nodemedia.NodeStreamerDelegate;
 
+/**
+ * 直播串流器使用实例
+ * 可用于RTSP流转为RTMP直播流推送
+ * 也可将本地MP4文件按实际帧率推送到RTMP服务器
+ */
 public class NodeStreamerDemoActivity extends AppCompatActivity implements NodeStreamerDelegate {
     EditText inEdt, outEdt;
     Button startBtn;
