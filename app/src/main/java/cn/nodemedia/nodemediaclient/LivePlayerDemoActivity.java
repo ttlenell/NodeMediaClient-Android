@@ -60,6 +60,13 @@ public class LivePlayerDemoActivity extends AppCompatActivity implements NodePla
          */
         np.setMaxBufferTime(maxBufferTime);
 
+        /**
+         * 设置连接超时时长,单位毫秒.默认一直等待.
+         * 连接部分RTMP服务器,握手并连接成功后,当播放一个不存在的流地址时,会一直等待下去.
+         * 如需超时,设置该值.超时后返回1006状态码.
+         */
+        np.setTimeout(10*1000);
+
         String playUrl = SharedPreUtil.getString(this, "playUrl");
 
         /**
@@ -138,6 +145,9 @@ public class LivePlayerDemoActivity extends AppCompatActivity implements NodePla
                 // 网络异常,播放中断,播放中途网络异常，回调这里。1秒后重连，如不需要，可停止
 //                nodePlayer.stopPlay();
                 break;
+            case 1006:
+                //RTMP连接播放超时
+                break;
             case 1100:
                 // 播放缓冲区为空
 //				System.out.println("NetStream.Buffer.Empty");
@@ -148,7 +158,7 @@ public class LivePlayerDemoActivity extends AppCompatActivity implements NodePla
                 break;
             case 1102:
                 // 播放缓冲区达到bufferTime时长,开始播放.
-                // 如果视频关键帧间隔比bufferTime长,并且服务端没有在第一帧返回视频关键帧,会先开始播放音频.
+                // 如果视频关键帧间隔比bufferTime长,并且服务端没有在缓冲区间内返回视频关键帧,会先开始播放音频.直到视频关键帧到来开始显示画面.
 //				System.out.println("NetStream.Buffer.Full");
                 break;
             case 1103:
