@@ -11,9 +11,11 @@ import android.widget.EditText;
 import com.anthonycr.grant.PermissionsManager;
 import com.anthonycr.grant.PermissionsResultAction;
 
+import cn.nodemedia.NodeAVPlayer;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button playerBtn, encoderBtn,nodePlayerBtn,nodeStreamerBtn;
-    EditText playUrl, pubUrl, bufferTime,maxBufferTime;
+    Button playerBtn, encoderBtn, nodePlayerBtn, nodeStreamerBtn,nodeAVPlayerBtn;
+    EditText playUrl, pubUrl, bufferTime, maxBufferTime,avPlayUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,23 +38,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
         playerBtn = (Button) findViewById(R.id.button1);
         encoderBtn = (Button) findViewById(R.id.button2);
-        nodePlayerBtn = (Button)findViewById(R.id.button3);
+        nodePlayerBtn = (Button) findViewById(R.id.button3);
         nodeStreamerBtn = (Button) findViewById(R.id.button4);
+        nodeAVPlayerBtn = (Button) findViewById(R.id.button5);
+
 
         playUrl = (EditText) findViewById(R.id.editTextPlay);
         pubUrl = (EditText) findViewById(R.id.editTextPublish);
         bufferTime = (EditText) findViewById(R.id.editText_bufferTime);
         maxBufferTime = (EditText) findViewById(R.id.editText_maxBufferTime);
+        avPlayUrl = (EditText) findViewById(R.id.editTextAVPlayer);
 
         playUrl.setText(SharedPreUtil.getString(this, "playUrl", "rtmp://play.nodemedia.cn/NodeMedia/stream_1000"));
-        pubUrl.setText(SharedPreUtil.getString(this, "pubUrl","rtmp://pub.nodemedia.cn/NodeMedia/stream_" + Math.round((Math.random() * 1000 + 1000))));
+        pubUrl.setText(SharedPreUtil.getString(this, "pubUrl", "rtmp://pub.nodemedia.cn/NodeMedia/stream_" + Math.round((Math.random() * 1000 + 1000))));
         bufferTime.setText(SharedPreUtil.getString(this, "bufferTime", "500"));
         maxBufferTime.setText(SharedPreUtil.getString(this, "maxBufferTime", "1000"));
+        avPlayUrl.setText(SharedPreUtil.getString(this, "avPlayUrl", "http://vod.nodemedia.cn/qybs.flv"));
 
         playerBtn.setOnClickListener(this);
         encoderBtn.setOnClickListener(this);
         nodePlayerBtn.setOnClickListener(this);
         nodeStreamerBtn.setOnClickListener(this);
+        nodeAVPlayerBtn.setOnClickListener(this);
     }
 
 
@@ -76,6 +83,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button4:
                 MainActivity.this.startActivity(new Intent(MainActivity.this, NodeStreamerDemoActivity.class));
+                break;
+            case R.id.button5:
+                SharedPreUtil.put(MainActivity.this, "avPlayUrl", avPlayUrl.getText().toString());
+                MainActivity.this.startActivity(new Intent(MainActivity.this, NodeAVPlayerDemoActivity.class));
                 break;
         }
     }
