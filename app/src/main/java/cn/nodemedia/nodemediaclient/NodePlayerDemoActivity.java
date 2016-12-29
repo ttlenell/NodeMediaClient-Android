@@ -48,14 +48,24 @@ public class NodePlayerDemoActivity extends AppCompatActivity implements NodePla
         npS.setSurfaceView(svS, NodePlayer.UIViewContentModeScaleAspectFit);
         npP.setSurfaceView(svP, NodePlayer.UIViewContentModeScaleAspectFit);
 
-        npB.startPlay("rtmp://xyplay.nodemedia.cn/live/demo1");
-        npS.startPlay("rtmp://xyplay.nodemedia.cn/live/demo2");
-        npP.startPlay("rtmp://xyplay.nodemedia.cn/live/demo3");
+        npB.setBufferTime(500);
+        npS.setBufferTime(500);
+        npP.setBufferTime(500);
+
+        npB.setMaxBufferTime(1000);
+        npS.setMaxBufferTime(1000);
+        npP.setMaxBufferTime(1000);
+
+
+        npB.startPlay("rtmp://xyplay.nodemedia.cn/live/stream_1001");
+        npS.startPlay("rtmp://xyplay.nodemedia.cn/live/stream_1002");
+        npP.startPlay("rtmp://xyplay.nodemedia.cn/live/stream_1003");
 
         tbB.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                //设置该路流是否打开音频
                 npB.setSpkEnable(arg1);
             }
         });
@@ -64,6 +74,7 @@ public class NodePlayerDemoActivity extends AppCompatActivity implements NodePla
 
             @Override
             public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                //设置该路流是否打开音频
                 npS.setSpkEnable(arg1);
             }
         });
@@ -72,6 +83,7 @@ public class NodePlayerDemoActivity extends AppCompatActivity implements NodePla
 
             @Override
             public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                //设置该路流是否打开音频
                 npP.setSpkEnable(arg1);
             }
         });
