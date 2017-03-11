@@ -16,7 +16,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 [奥点云](http://www.aodianyun.com/)及其他标准RTMP协议云服务器
 
 ##直播发布特性
-* H.264/AAC 组合的RTMP协议音视频流发布
+* H.264/AAC 组合的RTMP/RTMFP协议音视频流发布
 * 全屏视频采集，720p原画质缩放
 * NEON指令集优化H.264软件编码器，性能强劲，兼容性极强
 * H.264支持Baseline,Main,High profile
@@ -39,7 +39,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 ##直播播放特性
 * 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
-* 支持的网络协议 RTMP/RTMPT/RTSP/HLS/HTTP-FLV
+* 支持的网络协议 RTMP/RTMFP/RTMPT/RTSP/HLS/HTTP-FLV
 * 支持的视频解码器:H.264, FLV, VP6, MPEG4
 * 支持的音频解码器:AAC, MP3, SPEEX, NELLYMOSER, ADPCM_SWF, G.711
 * 视频编码:H.264/MPEG4 支持硬解加速
@@ -79,6 +79,13 @@ v2.0.0版本开始支持视频点播
  * 支持的音频格式 AAC/AC3/MP3/NELLYMOSER/SPEEX
  * 播放/暂停/快进/时长等基本操作
  * 视频编码:H.264/MPEG4 支持硬解加速
+ 
+##RTMFP协议  
+v2.0.1版本开始支持RTMFP协议
+  * 基于UDP传输协议
+  * 支持P2P连接(待实现)
+  * 支持加入NetGroup(待实现)
+  
 ##文档
 http://www.nodemedia.cn/doc
 
