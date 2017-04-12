@@ -81,11 +81,18 @@ v2.0.0版本开始支持视频点播
  * 视频编码:H.264/MPEG4 支持硬解加速
  
 ## RTMFP协议  
-v2.0.1版本开始支持RTMFP协议  
+v2.0.1实验版,支持RTMFP协议
   * 基于UDP传输协议  
   * 支持P2P连接(待实现)  
-  * 支持加入NetGroup(待实现)  
+  * 支持加入NetGroup(待实现) 
   
+## VR全景播放
+v2.0.2增加VR全景播放的实现,基于[MD360Player4Android](https://github.com/ashqal/MD360Player4Android)
+ * 支持HTTP点播,也支持RTMP直播
+ * 支持H.264硬件解码,注意:超大视频是否支持硬解根据具体手机性能而定.目前不支持硬解会出现灰屏问题,为软解时底层渲染与MD360Player4Android层渲染冲突所致.
+ * gradle外部引入MD360Player4Android库,按需添加,不占sdk大小.
+ 
+
 ## 文档
 http://www.nodemedia.cn/doc
 
