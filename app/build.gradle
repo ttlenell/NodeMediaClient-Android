@@ -7,8 +7,8 @@ android {
         applicationId "cn.nodemedia.demo"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 101
-        versionName "2.0.1"
+        versionCode 102
+        versionName "2.0.2"
     }
 
     buildTypes {
@@ -23,12 +23,21 @@ android {
             dirs 'libs'
         }
     }
+
+    //排除架构,可用于节省APK大小
+//    packagingOptions {
+//        exclude 'lib/x86/libNodeMediaClient.so'
+//        exclude 'lib/arm64-v8a/libNodeMediaClient.so'
+//        exclude 'lib/x86_64/libNodeMediaClient.so'
+//    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile(name: 'NodeMediaClient', ext: 'aar')
     compile 'com.android.support:appcompat-v7:25.1.1'
     compile 'com.android.support:design:25.1.1'
     compile 'com.anthonycr.grant:permissions:1.0'
-    compile(name: 'NodeMediaClient-2.0.1', ext: 'aar')
+    compile 'com.github.ashqal:MD360Player4Android:2.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
 }

@@ -19,7 +19,6 @@ public class LivePlayerDemoActivity extends AppCompatActivity implements NodePla
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_live_player_demo);
-        getSupportActionBar().hide();
 
         //创建NodePlayer实例
         np = new NodePlayer(this);
