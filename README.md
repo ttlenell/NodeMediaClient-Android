@@ -92,7 +92,7 @@ v2.0.2增加VR全景播放的实现,基于[MD360Player4Android](https://github.c
  * 支持H.264硬件解码,注意:超大视频是否支持硬解根据具体手机性能而定.目前不支持硬解会出现灰屏问题,为软解时底层渲染与MD360Player4Android层渲染冲突所致.
  * gradle外部引入MD360Player4Android库,按需添加,不占sdk大小.
  
-
+![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-Android/2.x/Screenshot_20170413-002113.jpg)
 ## 文档
 http://www.nodemedia.cn/doc
 
