@@ -89,7 +89,7 @@ v2.0.1实验版,支持RTMFP协议
 ## VR全景播放
 v2.0.2增加VR全景播放的实现,基于[MD360Player4Android](https://github.com/ashqal/MD360Player4Android)
  * 支持HTTP点播,也支持RTMP直播
- * 支持H.264硬件解码,注意:超大视频是否支持硬解根据具体手机性能而定.
+ * 支持H.264硬件解码,注意:超大视频(3840)是否支持硬解根据具体处理器内VideoCodec而定.
  * gradle外部引入MD360Player4Android库,按需添加,不占sdk大小.
  
 ![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-Android/2.x/Screenshot_20170413-002113.jpg)
