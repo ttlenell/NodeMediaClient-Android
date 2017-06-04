@@ -3,11 +3,11 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <android.opengl.GLSurfaceView
+    <cn.nodemedia.NodeCameraView
         android:id="@+id/camera_preview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </android.opengl.GLSurfaceView>
+    </cn.nodemedia.NodeCameraView>
 
 
     <RelativeLayout
