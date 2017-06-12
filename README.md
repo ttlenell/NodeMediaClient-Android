@@ -107,10 +107,10 @@ v2.0.2增加VR全景播放的实现,基于[MD360Player4Android](https://github.c
  * 完善RTMFP协议支持(UDP,P2P,NETGROUP)
  
 ## 商用授权
-商业软件需购买授权,业务咨询\定制开发,请联系  
+商业软件需购买授权,业务咨询\定制开发,请联系  
 QQ:281269007  
 Email:service@nodemedia.cn
 
 ## 免费授权(需审核)
-学生,个人开源项目可免费申请授权版,请联系  
+学生,个人开源项目可免费申请授权版,请联系  
 Email:service@nodemedia.cn
