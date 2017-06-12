@@ -21,8 +21,10 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * NEON指令集优化H.264软件编码器，性能强劲，兼容性极强
 * H.264支持Baseline,Main,High profile
 * 支持手机旋转,横屏16:9，竖屏9:16分辨率自动输出横竖屏视频流
+* 支持4:3分辨率,1:1分辨率输出
 * OpenGL ES 摄像头预览窗,任意视图比例不失真
 * NEON优化AAC软件编码器，极少CPU占用，支持LC和HE profile，音质还原效果好
+* 支持SPEEX音频编码
 * 支持环境背景噪音抑制，不再有沙沙声
 * 支持发布中途切换前后摄像头
 * 支持闪光灯开关
@@ -33,8 +35,10 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持定义为'live','record','append'的发布类型
 * 支持Adobe auth模式的鉴权验证 如rtmp://user:pass@server:port/app/name
 * 内置基于GPU加速的5级磨皮美白滤镜
+* 支持GPU算法的镜头缩放,兼容性好
 * 支持动态设置视频码率
 * 支持视频码率自适应网络带宽
+* 全自动网络异常重连
 
 ## 直播播放特性
 * 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
