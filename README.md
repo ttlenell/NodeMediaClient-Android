@@ -1,5 +1,8 @@
 # NodeMediaClient-Android
 
+## 国内镜像
+http://git.oschina.net/illuspas/NodeMediaClient-Android
+
 ## 简介
 NodeMediaClient是为移动端应用量身打造的基于RTMP协议的流媒体直播系统。通过集成本SDK，只需几个简单API调用，便可实现一套完整的直播流媒体应用基础。包含了流媒体应用中：『采集->编码->传输->解码->播放』的所有步骤。
 
@@ -97,10 +100,17 @@ v2.0.2增加VR全景播放的实现,基于[MD360Player4Android](https://github.c
  * gradle外部引入MD360Player4Android库,按需添加,不占sdk大小.
  
 ![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-Android/2.x/Screenshot_20170413-002113.jpg)
-## 文档
-http://www.nodemedia.cn/doc
 
+## 开发计划
+ * H.265直播传输
+ * 仿ActionScript3 NetConnect.call() 客户端服务端方法互调
+ * 完善RTMFP协议支持(UDP,P2P,NETGROUP)
+ 
 ## 商用授权
-程序发布需商用授权，业务咨询请联系  
+商业软件需购买授权,业务咨询\定制开发,请联系  
 QQ:281269007  
+Email:service@nodemedia.cn
+
+## 免费授权(需审核)
+学生,个人开源项目可免费申请授权版,请联系  
 Email:service@nodemedia.cn
