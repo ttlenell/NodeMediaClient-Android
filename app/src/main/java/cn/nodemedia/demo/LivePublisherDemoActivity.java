@@ -86,6 +86,14 @@ public class LivePublisherDemoActivity extends AppCompatActivity implements View
         np.setDenoiseEnable(true);
         np.setBeautyLevel(3);
         np.setOutputUrl(pubUrl);
+        /**
+         * @brief rtmpdump 风格的connect参数
+         * Append arbitrary AMF data to the Connect message. The type must be B for Boolean, N for number, S for string, O for object, or Z for null.
+         * For Booleans the data must be either 0 or 1 for FALSE or TRUE, respectively. Likewise for Objects the data must be 0 or 1 to end or begin an object, respectively.
+         * Data items in subobjects may be named, by prefixing the type with 'N' and specifying the name before the value, e.g. NB:myFlag:1.
+         * This option may be used multiple times to construct arbitrary AMF sequences. E.g.
+         */
+        np.setConnArgs("S:info O:1 NS:uid:10012 NB:vip:1 NN:num:209.12 O:0");
         np.startPreview();
     }
 
