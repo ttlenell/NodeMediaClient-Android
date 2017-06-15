@@ -47,9 +47,9 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
 * 支持的网络协议 RTMP/RTMFP/RTMPT/RTSP/HLS/HTTP-FLV
-* 支持的视频解码器:H.264, FLV, VP6, MPEG4
+* 支持的视频解码器:H.264, H.265, FLV, VP6, MPEG4
 * 支持的音频解码器:AAC, MP3, SPEEX, NELLYMOSER, ADPCM_SWF, G.711
-* 视频编码:H.264/MPEG4 支持硬解加速
+* 视频编码:H.264/MPEG4/H.265 支持硬解加速
 * OpenGL ES视频渲染
 * 全自动网络异常重连
 * 支持播放中途来电保持网络流，暂停播放，挂机后继续播放
@@ -66,20 +66,19 @@ v1.2.3新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动�
 v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行二次编码,不改变码率\清晰度,不调整视频方向.手机内置相机录像的视频码率非常大,竖向录制的视频是旋转90度的)
 
 ## 网络流点播\本地文件播放特性  
-* H.264硬解码
-* 支持的文件格式 : MP4,MOV,FLV,TS,AVI
+* 支持的文件格式 : MP4,MOV,FLV,TS,AVI,MKV
 * 支持的音频解码器 : AAC,AC3,MP3
-* 支持的视频解码器 : H.264,FLV,H.263,MPEG4
+* 支持的视频解码器 : H.264,MPEG4,H.265,FLV,H.263
+* 视频编码:H.264/MPEG4/H.265支持硬解加速
 * 支持获取视频时长,当前播放点,缓冲点,暂停,快进等基本操作
 * 支持Android原生MediaPlayerControl规范的播放控制器
 * OpenGL ES视频渲染
-
 
 ## 关于多播
 NodeMediaClien从第一个版本提交以来，Android端始终是以单例静态方法来实现播放和发布的功能，限制了多播的实现。自推出以来，不少客户也反馈了诸如多人会议、多路监控、直播间多人视频等需求。为了不影响旧版的使用，我们在Android端从v1.1.0版开始新增了NodePlayer类以提供同原来LivePlayer类一模一样的功能且支持多播和多种拉伸缩放模式。老用户如果不想升级仍然可以继续使用LivePlayer,我们也将继续保持bug维护.新用户不管单播还是多播需求,都直接用NodePlayer.
 
 ## 视频点播
-v2.0.0版本开始支持视频点播
+### v2.0.0版本开始支持视频点播
  * 支持的协议格式 HTTP/FILE
  * 支持的封装格式 MP4/FLV/AVI/MPEGTS
  * 支持的视频格式 H.264/H.263/FLV/MPEG4
@@ -88,16 +87,16 @@ v2.0.0版本开始支持视频点播
  * 视频编码:H.264/MPEG4 支持硬解加速
  
 ## RTMFP协议  
-v2.0.1实验版,支持RTMFP协议  
-  * 基于UDP传输协议  
-  * 支持P2P连接(待实现)  
-  * 支持加入NetGroup(待实现) 
+### v2.0.1实验版,支持RTMFP协议  
+ * 基于UDP传输协议
+ * 支持P2P连接(待实现)
+ * 支持加入NetGroup(待实现)
   
 ## VR全景播放
-v2.0.2增加VR全景播放的实现,基于[MD360Player4Android](https://github.com/ashqal/MD360Player4Android)
- * 支持HTTP点播,也支持RTMP直播
- * 支持H.264硬件解码,注意:超大视频(3840)是否支持硬解根据具体处理器内VideoCodec而定.
- * gradle外部引入MD360Player4Android库,按需添加,不占sdk大小.
+### v2.0.2增加VR全景播放的实现,基于[MD360Player4Android](https://github.com/ashqal/MD360Player4Android)  
+ * 支持HTTP点播,也支持RTMP直播. 
+ * 支持H.264/H.265硬件解码,注意:超大视频(3840)是否支持硬解根据具体处理器内VideoCodec而定.  
+ * gradle外部引入MD360Player4Android库,按需添加,不占sdk大小.  
  
 ![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-Android/2.x/Screenshot_20170413-002113.jpg)
 
@@ -105,7 +104,15 @@ v2.0.2增加VR全景播放的实现,基于[MD360Player4Android](https://github.c
  * H.265直播传输
  * 仿ActionScript3 NetConnect.call() 客户端服务端方法互调
  * 完善RTMFP协议支持(UDP,P2P,NETGROUP)
- 
+
+## H.265直播
+目前v2.1.3支持非Adobe官方协议下H.265直播播放,Android平台可在CPU支持的情况下开启硬件加速解码.  
+服务端需要修改codecId进行支持,NodeMedia将会在近期推出更新支持[nginx-rtmp-win32](https://github.com/illuspas/nginx-rtmp-win32)  
+推流端需要修改ffmpeg进行支持,NodeMedia将会在近期推出更新支持[ffmpeg-hw-win32](https://github.com/illuspas/nginx-rtmp-win32)  
+目前暂不支持手机端推流,x265软编码性能消耗较大,解决方案为手机端仍然以H.264推送到服务端,服务端进行H.264-->H.265实时转码,播放端解码H.265视频.  
+经测试,在相同分辨率帧率清晰度的情况下,码率减小一半以上.  
+
+
 ## 商用授权
 商业软件需购买授权,业务咨询\定制开发,请联系  
 QQ:281269007  
