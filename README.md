@@ -81,10 +81,10 @@ NodeMediaClien从第一个版本提交以来，Android端始终是以单例静�
 ### v2.0.0版本开始支持视频点播
  * 支持的协议格式 HTTP/FILE
  * 支持的封装格式 MP4/FLV/AVI/MPEGTS
- * 支持的视频格式 H.264/H.263/FLV/MPEG4
+ * 支持的视频格式 H.263/H.264/H.265/FLV/MPEG4
  * 支持的音频格式 AAC/AC3/MP3/NELLYMOSER/SPEEX
  * 播放/暂停/快进/时长等基本操作
- * 视频编码:H.264/MPEG4 支持硬解加速
+ * 视频编码:H.264/MPEG4/H.265 支持硬解加速
  
 ## RTMFP协议  
 ### v2.0.1实验版,支持RTMFP协议  
@@ -111,7 +111,7 @@ NodeMediaClien从第一个版本提交以来，Android端始终是以单例静�
 推流端需要修改ffmpeg进行支持,NodeMedia将会在近期推出更新支持[ffmpeg-hw-win32](https://github.com/illuspas/nginx-rtmp-win32)  
 目前暂不支持手机端推流,x265软编码性能消耗较大,解决方案为手机端仍然以H.264推送到服务端,服务端进行H.264-->H.265实时转码,播放端解码H.265视频.  
 经测试,在相同分辨率帧率清晰度的情况下,码率减小一半以上.  
-
+支持RTSP协议下海康摄像头Smart265的视频流
 
 ## 商用授权
 商业软件需购买授权,业务咨询\定制开发,请联系  
