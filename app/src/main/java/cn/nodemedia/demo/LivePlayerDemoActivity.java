@@ -28,7 +28,7 @@ public class LivePlayerDemoActivity extends AppCompatActivity implements NodePla
         //设置播放视图的渲染器模式,可以使用SurfaceView或TextureView. 默认SurfaceView
         npv.setRenderType(NodePlayerView.RenderType.SURFACEVIEW);
         //设置视图的内容缩放模式
-        npv.setUIViewContentMode(NodePlayerView.UIViewContentMode.ScaleAspectFill);
+        npv.setUIViewContentMode(NodePlayerView.UIViewContentMode.ScaleAspectFit);
 
 
         //将播放视图绑定到播放器
