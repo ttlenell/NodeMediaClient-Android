@@ -77,6 +77,15 @@ public class LivePlayerDemoActivity extends AppCompatActivity implements NodePla
         String playUrl = SharedPreUtil.getString(this, "playUrl");
         np.setInputUrl(playUrl);
 
+
+        /**
+         * 在本地开起一个RTMP服务,并进行监听播放,局域网内其他手机或串流器能推流到手机上直接进行播放,无需中心服务器支持
+         * 播放的ip可以是本机IP,也可以是0.0.0.0,但不能用127.0.0.1
+         * app/stream 可加可不加,只要双方匹配就行
+         */
+//        np.setLocalRTMP(true);
+
+
         /**
          * 开始播放直播视频
          */
