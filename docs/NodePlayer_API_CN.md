@@ -72,7 +72,7 @@ Table of Contents
 
 ### setMaxBufferTime
 设置播放最大缓冲, 单位毫秒, 默认值1000ms.
->当为直播时, 该值决定最大延迟, 当网络波动形成延迟并超过该值后, SDK内部进行追帧处理. 音频丢弃, 视频快进. 
+>当为直播时, 该值决定最大延迟, 当网络波动形成延迟并超过该值后, SDK内部进行追帧处理. 音频丢弃, 视频快进.   
 >当为点播时, 该值决定网络缓冲区达到多少之后停止读取,节省不必要的流量
 
 ### setHWEnable
@@ -182,3 +182,20 @@ Table of Contents
 
 ### 1104
 解码后得到视频高宽, 格式为 width x height
+
+
+# NodePlayerView API 
+
+## setRenderType(RenderType renderType)
+设置渲染器类型
+- NodePlayerView.RenderType.SURFACEVIEW
+- NodePlayerView.RenderType.TEXTUREVIEW
+
+## setUIViewContentMode(UIViewContentMode mode)
+设置视频画面缩放模式
+- NodePlayerView.UIViewContentMode.ScaleToFill
+  >[缩放填充]模式将整个视频填充到给定的显示区域,当显示区域与视频分辨率不一致时,发生画面被拉长或压扁,但没有黑边
+- NodePlayerView.UIViewContentMode.ScaleAspectFit
+  >[等比缩放]模式将整个视频等比例缩放后显示到给定区域,当显示区域与视频分辨率不一致时,画面仍然保持正常比例,但有黑边
+- NodePlayerView.UIViewContentMode.ScaleAspectFill
+  >[等比填充缩放]模式将整个视频等比例缩放后拉伸填充给定区域,当显示区域与视频分辨率不一致时,裁剪掉多余的视频画面,画面仍然保持正常比例,没有黑边,但视频会显示不完全
