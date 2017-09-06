@@ -2,7 +2,53 @@
 NodePlayer用于RTMP/RTMPT/RTSP/HTTP/TCP/UDP/FILE格式的音视频播放. 支持直播和点播形式, SDK根据两种不同的形式, 采用不同的缓冲策略.达到秒开视频, 自动消除累积延迟, 自动等待点播进度.
 当服务端支持GOP缓存特性, 可以达到视频画面跟手开, 自动快进追进度的极佳效果.
 
-[TOC]
+Table of Contents
+=================
+
+   * [NodePlayer API](#nodeplayer-api)
+      * [属性](#属性)
+         * [setInputUrl](#setinputurl)
+         * [setPageUrl](#setpageurl)
+         * [setSwfUrl](#setswfurl)
+         * [setConnArgs](#setconnargs)
+         * [setBufferTime](#setbuffertime)
+         * [setMaxBufferTime](#setmaxbuffertime)
+         * [setHWEnable](#sethwenable)
+         * [setAutoReconnectWaitTimeout](#setautoreconnectwaittimeout)
+         * [setConnectWaitTimeout](#setconnectwaittimeout)
+         * [setAudioEnable](#setaudioenable)
+         * [setVideoEnable](#setvideoenable)
+         * [setReceiveAudio](#setreceiveaudio)
+         * [setReceiveVideo](#setreceivevideo)
+         * [setSubscribe](#setsubscribe)
+         * [setPlayerView](#setplayerview)
+         * [setVRPlayerView](#setvrplayerview)
+         * [setNodePlayerDelegate](#setnodeplayerdelegate)
+         * [setLocalRTMP](#setlocalrtmp)
+      * [方法](#方法)
+         * [start()](#start)
+         * [stop()](#stop)
+         * [pause()](#pause)
+         * [seekTo(long pos)](#seektolong-pos)
+         * [getDuration()](#getduration)
+         * [getCurrentPosition()](#getcurrentposition)
+         * [getBufferPosition()](#getbufferposition)
+         * [getBufferPercentage()](#getbufferpercentage)
+         * [isPlaying()](#isplaying)
+         * [isLive()](#islive)
+      * [事件回调](#事件回调)
+         * [1000](#1000)
+         * [1001](#1001)
+         * [1002](#1002)
+         * [1003](#1003)
+         * [1004](#1004)
+         * [1005](#1005)
+         * [1006](#1006)
+         * [1100](#1100)
+         * [1101](#1101)
+         * [1102](#1102)
+         * [1103](#1103)
+         * [1104](#1104)
 
 ## 属性
 
