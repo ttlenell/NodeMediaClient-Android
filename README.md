@@ -16,7 +16,7 @@ Android 4.0及以上
 armeabi-v7a arm64-v8a x86 x86_64
 
 ## 支持的流媒体服务端
-fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Server及其他标准RTMP协议服务端
+fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs,[Node-Media-Server](https://github.com/illuspas/Node-Media-Server) 及其他标准RTMP协议服务端
 
 ## 支持的流媒体云服务器
 [奥点云](http://www.aodianyun.com/)及其他标准RTMP协议云服务器
