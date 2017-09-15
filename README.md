@@ -54,7 +54,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs,[Node-Media-Ser
 * 全自动网络异常重连
 
 ## 直播播放特性
-* 专为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
+* 专为RTMP/RTSP等直播协议优化的码流解析器，极短的分析时间，秒开视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
 * 支持的网络协议 RTMP/RTMFP/RTMPT/RTSP/HLS/HTTP-FLV
 * 支持的视频解码器:H.264, H.265, FLV, VP6, MPEG4
@@ -63,16 +63,16 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs,[Node-Media-Ser
 * OpenGL ES视频渲染
 * 全自动网络异常重连
 * 支持播放中途来电保持网络流，暂停播放，挂机后继续播放
-* 支持播放中途任意时刻截图
 * 支持设置最大缓冲时长,杜绝累计延迟
-* 支持多路直播流同时播放，理论最大32路
+* 支持多路直播流同时播放
+* RTSP支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
 
 ## 直播串流器
 v1.2.3新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器.  
 手机端不进行编解码,只有网络IO,不占用CPU.  
 v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行二次编码,不改变码率\清晰度,不调整视频方向.手机内置相机录像的视频码率非常大,竖向录制的视频是旋转90度的)
 
-## 网络流点播\本地文件播放特性  
+## 网络流点播/本地文件播放特性  
 * 支持的文件格式 : MP4,MOV,FLV,TS,AVI,MKV
 * 支持的音频解码器 : AAC,AC3,MP3
 * 支持的视频解码器 : H.264,MPEG4,H.265,FLV,H.263
