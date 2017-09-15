@@ -12,6 +12,7 @@ Table of Contents
          * [setConnArgs()](#setconnargs)
          * [setCameraPreview(NodeCameraView cameraPreview, int cameraID, boolean frontMirror)](#setcamerapreviewnodecameraview-camerapreview-int-cameraid-boolean-frontmirror)
          * [setZoomScale(int zoomScale)](#setzoomscaleint-zoomscale)
+         * [setAutoFocus](#setautofocus)
          * [setFlashEnable()](#setflashenable)
          * [setAudioParam(int bitrate, int profile)](#setaudioparamint-bitrate-int-profile)
          * [setVideoParam(int preset, int fps, int bitrate, int profile, boolean frontMirror)](#setvideoparamint-preset-int-fps-int-bitrate-int-profile-boolean-frontmirror)
@@ -52,7 +53,6 @@ Table of Contents
 ### setSwfUrl()
 设置RTMP协议集下swfUrl地址
 
-
 ### setConnArgs()
 设置RTMP协议集下connect命令发出时附带的参数. RTMPDUMP风格
 >Append arbitrary AMF data to the Connect message. The type must be B for Boolean, N for number, S for string, O for object, or Z for null. For Booleans the data must be either 0 or 1 for FALSE or TRUE, respectively. Likewise for Objects the data must be 0 or 1 to end or begin an object, respectively. Data items in subobjects may be named, by prefixing the type with 'N' and specifying the name before the value, e.g. NB:myFlag:1. This option may be used multiple times to construct arbitrary AMF sequences. E.g.  
@@ -67,6 +67,9 @@ Table of Contents
 ### setZoomScale(int zoomScale)
 设置摄像头缩放等级, 0-100
 >GPU算法, 非系统API, 所有机型上缩放效果比例一致
+
+### setAutoFocus(boolean autoFocus)
+当为true时,摄像头将全时自动对焦. 当为false时,每请求一次,对焦一次,之后锁定焦距
 
 ### setFlashEnable()
 设置是否一直开启闪光灯
