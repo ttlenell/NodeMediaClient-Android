@@ -56,11 +56,11 @@ public class LivePlayerDemoActivity extends AppCompatActivity implements NodePla
         np.setMaxBufferTime(maxBufferTime);
 
         /**
-         * 设置连接超时时长,单位毫秒.默认一直等待.
+         * 设置连接超时时长,单位毫秒.默认为0 一直等待.
          * 连接部分RTMP服务器,握手并连接成功后,当播放一个不存在的流地址时,会一直等待下去.
          * 如需超时,设置该值.超时后返回1006状态码.
          */
-        np.setConnectWaitTimeout(10*1000);
+//        np.setConnectWaitTimeout(10*1000);
 
         /**
          * @brief rtmpdump 风格的connect参数
@@ -69,7 +69,18 @@ public class LivePlayerDemoActivity extends AppCompatActivity implements NodePla
          * Data items in subobjects may be named, by prefixing the type with 'N' and specifying the name before the value, e.g. NB:myFlag:1.
          * This option may be used multiple times to construct arbitrary AMF sequences. E.g.
          */
-        np.setConnArgs("S:info O:1 NS:uid:10012 NB:vip:1 NN:num:209.12 O:0");
+//        np.setConnArgs("S:info O:1 NS:uid:10012 NB:vip:1 NN:num:209.12 O:0");
+
+
+        /**
+         * 设置RTSP使用TCP传输模式
+         * 支持的模式有:
+         * NodePlayer.RTSP_TRANSPORT_UDP
+         * NodePlayer.RTSP_TRANSPORT_TCP
+         * NodePlayer.RTSP_TRANSPORT_UDP_MULTICAST
+         * NodePlayer.RTSP_TRANSPORT_HTTP
+         */
+//        np.setRtspTransport(NodePlayer.RTSP_TRANSPORT_TCP);
 
         /**
          * 设置播放直播视频url
