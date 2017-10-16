@@ -37,6 +37,7 @@ Table of Contents
          * [getBufferPercentage()](#getbufferpercentage)
          * [isPlaying()](#isplaying)
          * [isLive()](#islive)
+         * [release()](#release)
       * [事件回调](#事件回调)
          * [1000](#1000)
          * [1001](#1001)
@@ -50,6 +51,9 @@ Table of Contents
          * [1102](#1102)
          * [1103](#1103)
          * [1104](#1104)
+   * [NodePlayerView API](#nodeplayerview-api)
+      * [setRenderType(RenderType renderType)](#setrendertyperendertype-rendertype)
+      * [setUIViewContentMode(UIViewContentMode mode)](#setuiviewcontentmodeuiviewcontentmode-mode)
 
 ## 属性
 
@@ -152,6 +156,9 @@ Table of Contents
 
 ### isLive()
 获取当前播放是否为直播视频
+
+### release()
+释放底层资源
 
 ## 事件回调
 
