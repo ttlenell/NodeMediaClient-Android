@@ -44,7 +44,7 @@ public class VRPlayerDemoActivity extends AppCompatActivity {
                         np.setVRPlayerView(surface);
                     }
                 })
-                .build(R.id.vr_surface_view);
+                .build(findViewById(R.id.vr_surface_view));
     }
 
 
