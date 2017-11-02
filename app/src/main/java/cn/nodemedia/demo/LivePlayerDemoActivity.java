@@ -126,7 +126,7 @@ public class LivePlayerDemoActivity extends AppCompatActivity implements NodePla
      */
     @Override
     public void onEventCallback(NodePlayer nodePlayer, int event, String msg) {
-        Log.i("NodeMediaClient","onEventCallback:"+event+" msg:"+msg);
+        Log.i("NodeMedia.NodePlayer","onEventCallback:"+event+" msg:"+msg);
 
         switch (event) {
             case 1000:

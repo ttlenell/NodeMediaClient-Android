@@ -196,6 +196,7 @@ public class LivePublisherDemoActivity extends AppCompatActivity implements View
 
     @Override
     public void onEventCallback(NodePublisher nodePublisher, int event, String msg) {
+        Log.i("NodeMedia.NodePublisher","EventCallback:"+event+" msg:"+msg);
         handler.sendEmptyMessage(event);
     }
 
