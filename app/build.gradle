@@ -7,8 +7,8 @@ android {
         applicationId "cn.nodemedia.demo"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 234
-        versionName "2.3.4"
+        versionCode 235
+        versionName "2.3.5"
     }
 
     buildTypes {
@@ -35,7 +35,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile(name: 'NodeMediaClient-2.3.4', ext: 'aar')
+    compile(name: 'NodeMediaClient-2.3.5', ext: 'aar')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.anthonycr.grant:permissions:1.0'
