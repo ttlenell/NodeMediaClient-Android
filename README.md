@@ -103,12 +103,6 @@ v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行�
  
 ![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-Android/2.x/Screenshot_20170413-002113.jpg)
 
-## 开发计划
- * H.265直播传输
- * 硬件编码
- * 仿ActionScript3 NetConnect.call() 客户端服务端方法互调
- * 完善RTMFP协议支持(UDP,P2P,NETGROUP)
-
 ## H.265直播
 目前v2.1.3之后的版本支持非Adobe官方协议下H.265直播播放  
 
@@ -121,6 +115,9 @@ Windows硬编码推流端
  
 目前暂不支持手机端推流,h.265软编码性能消耗较大,解决方案为手机端仍然以H.264推送到服务端,服务端进行H.264-->H.265实时转码,播放端解码H.265视频.  
 经测试,在相同分辨率帧率清晰度的情况下,码率减小一半以上. 
+
+## MPEGTS over UDP
+v2.3.7之及之后的版本： 当推流url为udp协议地址时, 如 udp://192.168.0.10:12345 则按照mpegts格式封装，udp传输。 接收端可以是任何支持该协议的播放器，如vlc。 如果推流ip地址是内网另外一台手机，则另一台手机只需用NodePlayer播放udp://127.0.0.1:12345即可，根据udp的特性，可随时打开关闭，再打开不中断，无需服务端
 
 ## 跨平台开源流媒体服务端(开发测试用)
 [Node-Media-Server](https://github.com/illuspas/Node-Media-Server) 
