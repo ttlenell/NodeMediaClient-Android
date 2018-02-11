@@ -14,7 +14,9 @@ allprojects {
 ```
 
 ```
-implementation 'com.github.NodeMedia:NodeMediaClient-Android:2.4.0'
+dependencies {
+    compile 'com.github.NodeMedia:NodeMediaClient-Android:2.4.2'
+}
 ```
 # 简单用法
 ## NodePlayer
