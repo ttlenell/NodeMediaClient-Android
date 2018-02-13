@@ -69,7 +69,7 @@ dependencies {
 
 ## NodeStreamer
 用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器。  
-手机端不进行编解码,只有网络IO,不占用CPU.注:当按Home或锁屏时,系统会禁止后台网络传输。  
+手机端不进行编解码,只有网络IO,不占用CPU.  
 RTSP输入支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
 
 ## MPEGTS over UDP
