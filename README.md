@@ -19,9 +19,7 @@ dependencies {
 }
 ```
 # 简单用法
-## NodePlayer
-
-## NodePublisher
+[请参考2.x分支demo](https://github.com/NodeMedia/NodeMediaClient-Android/tree/2.x)
 
 # 特性
 ## NodePlayer
