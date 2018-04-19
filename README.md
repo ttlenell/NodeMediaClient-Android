@@ -19,7 +19,7 @@ dependencies {
 }
 ```
 # 简单用法
-[请参考2.x分支demo](https://github.com/NodeMedia/NodeMediaClient-Android/tree/2.x)
+完整用例：[QLive源码](https://github.com/NodeMedia/QLive-Android)
 
 # 特性
 ## NodePlayer
