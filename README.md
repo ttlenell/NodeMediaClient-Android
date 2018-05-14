@@ -19,9 +19,7 @@ dependencies {
 }
 ```
 # 简单用法
-## NodePlayer
-
-## NodePublisher
+完整用例：[QLive源码](https://github.com/NodeMedia/QLive-Android)
 
 # 特性
 ## NodePlayer
