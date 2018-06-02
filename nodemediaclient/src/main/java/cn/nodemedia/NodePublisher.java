@@ -78,8 +78,11 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
     public static final int PUBLISH_TYPE_RECORD = 1;
     public static final int PUBLISH_TYPE_APPEND = 2;
 
+    public static final int NM_PIXEL_BGRA = 1;
+    public static final int NM_PIXEL_RGBA = 2;
+
     public NodePublisher(@NonNull Context context) {
-        this(context,"");
+        this(context, "");
     }
 
     public NodePublisher(@NonNull Context context, @NonNull String premium) {
@@ -164,10 +167,6 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
 
     public void setAudioParam(int bitrate, int profile, int sampleRate) {
         jniSetAudioParam(bitrate, profile, sampleRate);
-    }
-
-    public void setVideoParam(int preset, int fps, int bitrate, int profile, boolean frontMirror) {
-        jniSetVideoParam(preset, fps, bitrate, profile, frontMirror);
     }
 
     public int switchCamera() {
@@ -278,7 +277,9 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
 
     private native void jniSetAudioParam(int bitrate, int profile, int sampleRate);
 
-    private native void jniSetVideoParam(int preset, int fps, int bitrate, int profile, boolean frontMirror);
+    public native void setVideoParam(int preset, int fps, int bitrate, int profile, boolean frontMirror);
+
+    public native void setRawVideoParam(int fmt, int width, int height, int fps, int bitrate, int profile);
 
     public native void setAutoReconnectWaitTimeout(int autoReconnectWaitTimeout);
 
@@ -296,12 +297,11 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
 
     public native void setDynamicRateEnable(boolean dynamicRateEnable);
 
-    @Deprecated
-    public native void setAecEnable(boolean aecEnable);
-
     public native void setKeyFrameInterval(int keyFrameInterval);
 
     public native void setPublishType(int publishType);
+
+    public native int pushRawvideo(byte[] data, int size);
 
     public native int start();
 
