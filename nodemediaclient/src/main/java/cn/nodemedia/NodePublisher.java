@@ -256,7 +256,6 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
         void onCaptureCallback(Bitmap picture);
     }
 
-
     private native long jniInit(Object context, String premium);
 
     private native void jniDeInit();

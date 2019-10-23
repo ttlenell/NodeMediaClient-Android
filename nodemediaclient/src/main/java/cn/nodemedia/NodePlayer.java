@@ -44,10 +44,7 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
     private boolean hwEnable;
     private boolean audioEnable;
     private boolean videoEnable;
-    private boolean receiveAudio;
-    private boolean receiveVideo;
     private boolean subscribe;
-    private boolean localRTMP;
 
     public NodePlayer(@NonNull Context context) {
         this(context,"");
@@ -67,10 +64,7 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
         this.hwEnable = true;
         this.audioEnable = true;
         this.videoEnable = true;
-        this.receiveAudio = true;
-        this.receiveVideo = true;
         this.subscribe = false;
-        this.localRTMP = false;
 
         if (sAudioFocusChangeListener == null) {
             sAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
@@ -140,10 +134,6 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
         this.maxBufferTime = maxBufferTime;
     }
 
-    public void setLocalRTMP(boolean localRTMP) {
-        this.localRTMP = localRTMP;
-    }
-
     public void setHWEnable(boolean hwEnable) {
         this.hwEnable = hwEnable;
     }
@@ -166,30 +156,14 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
         jniSetVideoEnable(videoEnable);
     }
 
-    public void setReceiveAudio(boolean receiveAudio) {
-        this.receiveAudio = receiveAudio;
-    }
-
-    public void setReceiveVideo(boolean receiveVideo) {
-        this.receiveVideo = receiveVideo;
-    }
-
     public void setSubscribe(boolean subscribe) {
         this.subscribe = subscribe;
     }
 
     public void setPlayerView(@NonNull NodePlayerView npv) {
         mNodePlayerView = npv;
-        if (npv == null) {
-            jniSetVideoEnable(false);
-        } else {
-            jniSetVideoEnable(true);
-            npv.setRenderCallback(this);
-        }
-    }
-
-    public void setVRPlayerView(@NonNull Surface surface) {
-        jniSetVRSurface(surface);
+        jniSetVideoEnable(true);
+        npv.setRenderCallback(this);
     }
 
     public void setNodePlayerDelegate(@NonNull NodePlayerDelegate delegate) {
@@ -211,8 +185,6 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
     private native void jniDeInit();
 
     private native int jniSetSurface(Object surface);
-
-    private native int jniSetVRSurface(Object surface);
 
     private native int jniSetSurfaceChange();
 

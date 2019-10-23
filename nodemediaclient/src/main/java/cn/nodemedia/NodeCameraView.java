@@ -47,12 +47,10 @@ public class NodeCameraView extends FrameLayout implements GLSurfaceView.Rendere
     private boolean isAutoFocus = true;
     private int mCameraId = 0;
     private int mCameraNum = 0;
-    private Camera.CameraInfo mCameraInfo;
     private int mCameraWidth;
     private int mCameraHeight;
     private int mSurfaceWidth;
     private int mSurfaceHeight;
-    private float[] mtx = new float[16];
     private NodeCameraViewCallback mNodeCameraViewCallback;
     private boolean isMediaOverlay = false;
     public NodeCameraView(@NonNull Context context) {
