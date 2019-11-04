@@ -39,7 +39,6 @@ dependencies {
 * RTMP支持Adobe auth模式的鉴权验证 如rtmp://user:pass@server:port/app/name
 * RTMP支持播放前设置receiveAudio,receiveVideo来控制只接收音频或视频流(需服务端实现，fms，red5支持)
 * RTMP支持发送FCSubscribe命令，兼容国外Akamai, Edgecast , Limelight 等CDN
-* RTMP支持RTMP 302重定向(AMS,Wowza模式)
 * RTSP支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
 * RTSP支持海康Smart265解码播放
 
@@ -63,12 +62,6 @@ dependencies {
 * 支持动态设置视频码率
 * 支持视频码率自适应网络带宽
 * 支持GPU算法的镜头缩放,兼容性好
-* 支持定义为'live','record','append'的发布类型
-
-## NodeStreamer
-用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器。  
-手机端不进行编解码,只有网络IO,不占用CPU.  
-RTSP输入支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
 
 ## MPEGTS over UDP
 当推流url为udp协议地址时, 如 udp://192.168.0.10:12345 则按照mpegts格式封装，udp传输。
