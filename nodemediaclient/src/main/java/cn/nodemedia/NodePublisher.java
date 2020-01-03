@@ -50,18 +50,21 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
     public static final int VIDEO_PPRESET_16X9_480 = 2;
     public static final int VIDEO_PPRESET_16X9_540 = 3;
     public static final int VIDEO_PPRESET_16X9_720 = 4;
+    public static final int VIDEO_PPRESET_16X9_1080 = 5;
 
     public static final int VIDEO_PPRESET_4X3_270 = 10;
     public static final int VIDEO_PPRESET_4X3_360 = 11;
     public static final int VIDEO_PPRESET_4X3_480 = 12;
     public static final int VIDEO_PPRESET_4X3_540 = 13;
     public static final int VIDEO_PPRESET_4X3_720 = 14;
+    public static final int VIDEO_PPRESET_4X3_1080 = 15;
 
     public static final int VIDEO_PPRESET_1X1_270 = 20;
     public static final int VIDEO_PPRESET_1X1_360 = 21;
     public static final int VIDEO_PPRESET_1X1_480 = 22;
     public static final int VIDEO_PPRESET_1X1_540 = 23;
     public static final int VIDEO_PPRESET_1X1_720 = 24;
+    public static final int VIDEO_PPRESET_1X1_1080 = 25;
 
     public static final int AUDIO_PROFILE_LCAAC = 0;
     public static final int AUDIO_PROFILE_HEAAC = 1;
