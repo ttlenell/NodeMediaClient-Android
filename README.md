@@ -26,7 +26,7 @@ dependencies {
 * 专为RTMP/RTSP等直播协议优化的码流解析器，极短的分析时间，秒开视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
 * 视频编码:H.265/H.264支持硬解码
-* 支持的网络协议 RTMP/RTMPT/RTMPE/RTSP/HLS/HTTP(S)-FLV
+* 支持的网络协议 RTMP/RTMPT/RTMPE/RTSP/HLS/HTTP(S)-FLV/KMP
 * 支持的视频解码器:H.264, H.265
 * 支持的音频解码器:AAC, SPEEX, NELLYMOSER, G.711
 * OpenGL ES视频渲染
