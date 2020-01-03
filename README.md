@@ -15,7 +15,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.NodeMedia:NodeMediaClient-Android:2.5.1'
+    compile 'com.github.NodeMedia:NodeMediaClient-Android:2.6.0'
 }
 ```
 # 简单用法
@@ -25,10 +25,10 @@ dependencies {
 ## NodePlayer
 * 专为RTMP/RTSP等直播协议优化的码流解析器，极短的分析时间，秒开视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
-* 视频编码:H.265/H.264/MPEG4支持硬解码
+* 视频编码:H.265/H.264支持硬解码
 * 支持的网络协议 RTMP/RTMPT/RTMPE/RTSP/HLS/HTTP(S)-FLV
-* 支持的视频解码器:H.264, H.265,FLV, VP6, MPEG4
-* 支持的音频解码器:AAC, MP3, SPEEX, NELLYMOSER, ADPCM_SWF, G.711
+* 支持的视频解码器:H.264, H.265
+* 支持的音频解码器:AAC, SPEEX, NELLYMOSER, G.711
 * OpenGL ES视频渲染
 * 全自动网络异常重连
 * 支持播放中途来电保持网络流，暂停播放，挂机后继续播放
@@ -37,14 +37,13 @@ dependencies {
 * RTMP支持设置swfUrl和pageUrl
 * RTMP支持设置Connect Arguments (rtmpdump风格)
 * RTMP支持Adobe auth模式的鉴权验证 如rtmp://user:pass@server:port/app/name
-* RTMP支持播放前设置receiveAudio,receiveVideo来控制只接收音频或视频流(需服务端实现，fms，red5支持)
 * RTMP支持发送FCSubscribe命令，兼容国外Akamai, Edgecast , Limelight 等CDN
 * RTSP支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
 * RTSP支持海康Smart265解码播放
 
 ## NodePublisher
 * H.264/AAC 组合的RTMP协议音视频流发布
-* 全屏视频采集，720p原画质缩放
+* 全屏视频采集，1080p原画质缩放
 * NEON指令集优化H.264软件编码器，性能强劲，兼容性极强
 * H.264支持Baseline, Main, High profile
 * 支持手机旋转,横屏16:9，竖屏9:16分辨率自动输出横竖屏视频流
