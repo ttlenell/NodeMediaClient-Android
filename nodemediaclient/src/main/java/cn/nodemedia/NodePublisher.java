@@ -32,6 +32,7 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
     private String pageUrl;
     private String swfUrl;
     private String connArgs;
+    private String cryptoKey;
 
     private boolean isFrontCamera;
     private boolean isDisplayFrontMirror;
@@ -76,10 +77,6 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
 
     public static final int CAMERA_BACK = 0;
     public static final int CAMERA_FRONT = 1;
-
-    public static final int PUBLISH_TYPE_LIVE = 0;
-    public static final int PUBLISH_TYPE_RECORD = 1;
-    public static final int PUBLISH_TYPE_APPEND = 2;
 
     public static final int NM_PIXEL_BGRA = 1;
     public static final int NM_PIXEL_RGBA = 2;
@@ -155,6 +152,10 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
 
     public void setConnArgs(@NonNull String connArgs) {
         this.connArgs = connArgs;
+    }
+
+    public void setCryptoKey(String cryptoKey) {
+        this.cryptoKey = cryptoKey;
     }
 
     public void setCameraPreview(@NonNull NodeCameraView cameraPreview, int cameraID, boolean frontMirror) {

@@ -34,7 +34,7 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
     private String pageUrl;
     private String swfUrl;
     private String connArgs;
-
+    private String cryptoKey;
     private String rtspTransport;
 
     private int bufferTime;
@@ -47,7 +47,7 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
     private boolean subscribe;
 
     public NodePlayer(@NonNull Context context) {
-        this(context,"");
+        this(context, "");
     }
 
     public NodePlayer(@NonNull Context context, @NonNull String premium) {
@@ -146,6 +146,10 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
         this.connectWaitTimeout = connectWaitTimeout;
     }
 
+    public void setCryptoKey(String cryptoKey) {
+        this.cryptoKey = cryptoKey;
+    }
+
     public void setAudioEnable(boolean audioEnable) {
         this.audioEnable = audioEnable;
         jniSetAudioEnable(audioEnable);
@@ -159,6 +163,7 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
     public void setSubscribe(boolean subscribe) {
         this.subscribe = subscribe;
     }
+
 
     public void setPlayerView(@NonNull NodePlayerView npv) {
         mNodePlayerView = npv;
