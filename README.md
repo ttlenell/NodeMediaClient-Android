@@ -15,7 +15,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.NodeMedia:NodeMediaClient-Android:2.6.0'
+    compile 'com.github.NodeMedia:NodeMediaClient-Android:2.6.3'
 }
 ```
 # 简单用法
@@ -40,6 +40,7 @@ dependencies {
 * RTMP支持发送FCSubscribe命令，兼容国外Akamai, Edgecast , Limelight 等CDN
 * RTSP支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
 * RTSP支持海康Smart265解码播放
+* 支持RTMP/HTTP-FLV视频解密播放
 
 ## NodePublisher
 * H.264/AAC 组合的RTMP协议音视频流发布
@@ -61,11 +62,7 @@ dependencies {
 * 支持动态设置视频码率
 * 支持视频码率自适应网络带宽
 * 支持GPU算法的镜头缩放,兼容性好
-
-## MPEGTS over UDP
-当推流url为udp协议地址时, 如 udp://192.168.0.10:12345 则按照mpegts格式封装，udp传输。
-接收端可以是任何支持该协议的播放器，如vlc。
-如果推流ip地址是内网另外一台手机，则另一台手机只需用NodePlayer播放udp://127.0.0.1:12345即可，根据udp的特性，可随时打开关闭，再打开不中断，无需服务端
+* 支持RTMP视频加密推流
 
 # 支持的流媒体服务端
 fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, [Node-Media-Server](https://github.com/illuspas/Node-Media-Server) 及其他标准RTMP协议服务端
@@ -78,5 +75,8 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, [Node-Media-Se
 - 硬件加速的视频编码、解码器
 - 麦克风降噪
 - 平滑肌肤美颜
+- RTMP音视频内容加密
 
-请联系商务服务邮箱 : service@nodemedia.cn
+请联系商务服务  
+邮箱 : service@nodemedia.cn  
+QQ : 281269007
