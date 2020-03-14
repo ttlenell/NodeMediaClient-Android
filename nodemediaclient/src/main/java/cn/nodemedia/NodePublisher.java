@@ -85,8 +85,8 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
         this(context, "");
     }
 
-    public NodePublisher(@NonNull Context context, @NonNull String premium) {
-        this.id = jniInit(context, premium);
+    public NodePublisher(@NonNull Context context, @NonNull String license) {
+        this.id = jniInit(context, license);
         this.outputUrl = "";
         this.pageUrl = "";
         this.swfUrl = "";
@@ -281,8 +281,6 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
     private native void jniSetAudioParam(int bitrate, int profile, int sampleRate);
 
     public native void setVideoParam(int preset, int fps, int bitrate, int profile, boolean frontMirror);
-
-    public native void setRawVideoParam(int fmt, int width, int height, int fps, int bitrate, int profile);
 
     public native void setAutoReconnectWaitTimeout(int autoReconnectWaitTimeout);
 

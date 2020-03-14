@@ -50,8 +50,8 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
         this(context, "");
     }
 
-    public NodePlayer(@NonNull Context context, @NonNull String premium) {
-        this.id = jniInit(context, premium);
+    public NodePlayer(@NonNull Context context, @NonNull String license) {
+        this.id = jniInit(context, license);
         this.inputUrl = "";
         this.pageUrl = "";
         this.swfUrl = "";
