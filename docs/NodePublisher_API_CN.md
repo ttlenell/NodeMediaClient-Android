@@ -84,7 +84,7 @@ Table of Contents
 	
 ### setVideoParam(int preset, int fps, int bitrate, int profile, boolean frontMirror)	
 设置视频编码参数
-- 参数1 : [视频分辨率预设](VIDEO_PPRESET)
+- 参数1 : [视频分辨率预设](https://github.com/NodeMedia/NodeMediaClient-Android/blob/2.x/docs/NodePublisher_API_CN.md#video_ppreset)
 - 参数2 : 视频帧率
 - 参数3 : 视频比特率
 - 参数4 : 视频编码规格
