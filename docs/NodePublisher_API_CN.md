@@ -173,6 +173,7 @@ public static final int VIDEO_PPRESET_16X9_360 = 1;
 public static final int VIDEO_PPRESET_16X9_480 = 2;
 public static final int VIDEO_PPRESET_16X9_540 = 3;
 public static final int VIDEO_PPRESET_16X9_720 = 4;
+public static final int VIDEO_PPRESET_16X9_1080 = 5;
 
 public static final int VIDEO_PPRESET_4X3_270 = 10;
 public static final int VIDEO_PPRESET_4X3_360 = 11;
