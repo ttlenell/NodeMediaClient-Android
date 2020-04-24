@@ -45,6 +45,7 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
     private int cameraHeight;
     private int surfaceWidth;
     private int surfaceHeight;
+    private int logLevel;
 
     public static final int VIDEO_PPRESET_16X9_270 = 0;
     public static final int VIDEO_PPRESET_16X9_360 = 1;
@@ -69,7 +70,6 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
 
     public static final int AUDIO_PROFILE_LCAAC = 0;
     public static final int AUDIO_PROFILE_HEAAC = 1;
-    public static final int AUDIO_PROFILE_SPEEX = 2;
 
     public static final int VIDEO_PROFILE_BASELINE = 0;
     public static final int VIDEO_PROFILE_MAIN = 1;
@@ -80,6 +80,10 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
 
     public static final int NM_PIXEL_BGRA = 1;
     public static final int NM_PIXEL_RGBA = 2;
+
+    public static final int NM_LOGLEVEL_ERROR = 0;
+    public static final int NM_LOGLEVEL_INFO = 1;
+    public static final int NM_LOGLEVEL_DEBUG = 2;
 
     public NodePublisher(@NonNull Context context) {
         this(context, "");
@@ -171,6 +175,10 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
 
     public void setAudioParam(int bitrate, int profile, int sampleRate) {
         jniSetAudioParam(bitrate, profile, sampleRate);
+    }
+
+    public void setLogLevel(int logLevel) {
+        this.logLevel = logLevel;
     }
 
     public int switchCamera() {

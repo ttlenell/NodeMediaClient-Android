@@ -19,11 +19,6 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
         System.loadLibrary("NodeMediaClient");
     }
 
-    public static final String RTSP_TRANSPORT_UDP = "udp";
-    public static final String RTSP_TRANSPORT_TCP = "tcp";
-    public static final String RTSP_TRANSPORT_UDP_MULTICAST = "udp_multicast";
-    public static final String RTSP_TRANSPORT_HTTP = "http";
-
     private long id;
     private NodePlayerView mNodePlayerView;
     private NodePlayerDelegate mNodePlayerDelegate;
@@ -41,10 +36,21 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
     private int maxBufferTime;
     private int autoReconnectWaitTimeout;
     private int connectWaitTimeout;
+    private int logLevel;
     private boolean hwEnable;
     private boolean audioEnable;
     private boolean videoEnable;
     private boolean subscribe;
+
+
+    public static final String RTSP_TRANSPORT_UDP = "udp";
+    public static final String RTSP_TRANSPORT_TCP = "tcp";
+    public static final String RTSP_TRANSPORT_UDP_MULTICAST = "udp_multicast";
+    public static final String RTSP_TRANSPORT_HTTP = "http";
+
+    public static final int NM_LOGLEVEL_ERROR = 0;
+    public static final int NM_LOGLEVEL_INFO = 1;
+    public static final int NM_LOGLEVEL_DEBUG = 2;
 
     public NodePlayer(@NonNull Context context) {
         this(context, "");
@@ -56,6 +62,8 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
         this.pageUrl = "";
         this.swfUrl = "";
         this.connArgs = "";
+        this.cryptoKey = "";
+        this.logLevel = NM_LOGLEVEL_ERROR;
         this.rtspTransport = RTSP_TRANSPORT_UDP;
         this.bufferTime = 500;
         this.maxBufferTime = 1000;
@@ -150,6 +158,10 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
         this.cryptoKey = cryptoKey;
     }
 
+    public void setLogLevel(int logLevel) {
+        this.logLevel = logLevel;
+    }
+
     public void setAudioEnable(boolean audioEnable) {
         this.audioEnable = audioEnable;
         jniSetAudioEnable(audioEnable);
@@ -196,6 +208,8 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
     private native int jniSetAudioEnable(boolean enable);
 
     private native int jniSetVideoEnable(boolean enable);
+
+    public native int setVolume(float volume);
 
     public native int start();
 
