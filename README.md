@@ -15,7 +15,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.NodeMedia:NodeMediaClient-Android:2.6.3'
+    compile 'com.github.NodeMedia:NodeMediaClient-Android:2.7.2'
 }
 ```
 # 简单用法
