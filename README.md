@@ -15,7 +15,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.NodeMedia:NodeMediaClient-Android:2.7.2'
+    compile 'com.github.NodeMedia:NodeMediaClient-Android:2.7.3'
 }
 ```
 # 简单用法
@@ -72,7 +72,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, [Node-Media-Se
 基于Node.JS开发, 跨平台/高性能, 支持RTMP协议推流,RTMP/HTTP-FLV/WebSocket-FLV播放, 内置推流鉴权/播放防盗链/GOP缓存急速秒开.
 
 # 高级版
-- 硬件加速的视频编码、解码器
+- 硬件加速的视频解码器
 - 麦克风降噪
 - 平滑肌肤美颜
 - RTMP音视频内容加密
