@@ -23,6 +23,7 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
     private long id;
     private WindowManager wm = null;
     private NodePublisherDelegate mNodePublisherDelegate;
+    private NodePublisherVideoTextureDelegate mNodePublisherVideoTextureDelegate;
     private CapturePictureListener mCapturePictureListener;
     private NodeCameraView mNodeCameraView;
     private static AudioManager.OnAudioFocusChangeListener sAudioFocusChangeListener = null;
@@ -246,6 +247,11 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
         this.mNodePublisherDelegate = delegate;
     }
 
+    public void setNodePublisherVideoTextureDelegate(@NonNull NodePublisherVideoTextureDelegate nodePublisherVideoTextureDelegate) {
+        this.mNodePublisherVideoTextureDelegate = nodePublisherVideoTextureDelegate;
+        jniUseCustomFilter();
+    }
+
     private void onEvent(int event, String eventMsg) {
         if (mNodePublisherDelegate != null) {
             mNodePublisherDelegate.onEventCallback(this, event, eventMsg);
@@ -262,6 +268,14 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
             sBitmap.recycle();
             mCapturePictureListener.onCaptureCallback(dBitmap);
         }
+    }
+
+    private int onDrawBefore(int textureId) {
+        if (this.mNodePublisherVideoTextureDelegate != null) {
+            textureId = this.mNodePublisherVideoTextureDelegate.onDrawTextureCallback(this, textureId, this.cameraWidth, this.cameraHeight,
+                    this.isFrontCamera, this.cameraOri);
+        }
+        return textureId;
     }
 
     public interface CapturePictureListener {
@@ -287,6 +301,8 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
     private native void jniAudioMuted(boolean pause);
 
     private native void jniSetAudioParam(int bitrate, int profile, int sampleRate);
+
+    private native void jniUseCustomFilter();
 
     public native void setVideoParam(int preset, int fps, int bitrate, int profile, boolean frontMirror);
 
@@ -326,7 +342,12 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
     public void OnChange(int cameraWidth, int cameraHeight, int surfaceWidth, int surfaceHeight) {
         this.cameraOri = mNodeCameraView.getCameraOrientation();
         this.windowOri = getWindowRotation();
+        this.cameraWidth = cameraWidth;
+        this.cameraHeight = cameraHeight;
         this.isFrontCamera = mNodeCameraView.isFrontCamera();
+        if (this.mNodePublisherVideoTextureDelegate != null) {
+            this.mNodePublisherVideoTextureDelegate.onChangeTextureCallback(this, this.isFrontCamera, this.cameraOri, this.windowOri);
+        }
         jniChangeGPUImage(cameraWidth, cameraHeight, surfaceWidth, surfaceHeight);
     }
 
