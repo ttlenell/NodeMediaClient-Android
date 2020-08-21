@@ -15,7 +15,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.NodeMedia:NodeMediaClient-Android:2.8.1'
+    compile 'com.github.NodeMedia:NodeMediaClient-Android:2.8.3'
 ```
 # 简单用法
 完整用例：[QLive源码](https://github.com/NodeMedia/QLive-Android)[(API文档)](https://github.com/NodeMedia/NodeMediaClient-Android/tree/2.x/docs)

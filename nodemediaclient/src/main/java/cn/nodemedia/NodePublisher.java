@@ -270,14 +270,6 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
         }
     }
 
-    private int onDrawBefore(int textureId) {
-        if (this.mNodePublisherVideoTextureDelegate != null) {
-            textureId = this.mNodePublisherVideoTextureDelegate.onDrawTextureCallback(this, textureId, this.cameraWidth, this.cameraHeight,
-                    this.isFrontCamera, this.cameraOri);
-        }
-        return textureId;
-    }
-
     public interface CapturePictureListener {
         void onCaptureCallback(Bitmap picture);
     }
@@ -335,6 +327,9 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
 
     @Override
     public void OnCreate() {
+        if(this.mNodePublisherVideoTextureDelegate != null) {
+            this.mNodePublisherVideoTextureDelegate.onCreateTextureCallback(this);
+        }
         jniInitGPUImage();
     }
 
@@ -353,11 +348,18 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
 
     @Override
     public void OnDraw(int textureId) {
+        if (this.mNodePublisherVideoTextureDelegate != null) {
+            textureId = this.mNodePublisherVideoTextureDelegate.onDrawTextureCallback(this, textureId, this.cameraWidth, this.cameraHeight,
+                    this.isFrontCamera, this.cameraOri);
+        }
         jniDrawGPUImage(textureId);
     }
 
     @Override
     public void OnDestroy() {
+        if(this.mNodePublisherVideoTextureDelegate != null) {
+            this.mNodePublisherVideoTextureDelegate.onDestroyTextureCallback(this);
+        }
         jniFreeGPUImage();
     }
 }
