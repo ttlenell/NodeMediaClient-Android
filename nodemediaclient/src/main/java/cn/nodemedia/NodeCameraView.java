@@ -291,6 +291,14 @@ public class NodeCameraView extends FrameLayout implements GLSurfaceView.Rendere
         }
     }
 
+    public void setZoom(float zoomScale) {
+        Camera.Parameters params = mCamera.getParameters();
+        int maxZoom = params.getMaxZoom();
+        int scaledValue = (int) (zoomScale * maxZoom);
+        params.setZoom(scaledValue);
+        mCamera.setParameters(params);
+    }
+
     //GLSurface callback
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
