@@ -295,6 +295,7 @@ public class NodeCameraView extends FrameLayout implements GLSurfaceView.Rendere
         Camera.Parameters params = mCamera.getParameters();
         int maxZoom = params.getMaxZoom();
         int scaledValue = (int) (zoomScale * maxZoom);
+        Log.d(TAG, "Setting Zoom - zoomScale: " + zoomScale + " ; maxZoom: " + maxZoom + " ; scaledValue: " + scaledValue);
         params.setZoom(scaledValue);
         mCamera.setParameters(params);
     }
