@@ -1,4 +1,4 @@
-package cn.nodemedia;
+package qwikcut.nodemedia;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("cn.nodemedia.test", appContext.getPackageName());
+        assertEquals("qwikcut.nodemedia.test", appContext.getPackageName());
     }
 }

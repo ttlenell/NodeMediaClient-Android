@@ -1,4 +1,4 @@
-package cn.nodemedia;
+package qwikcut.nodemedia;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -17,9 +17,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 
-import static cn.nodemedia.NodePlayerView.RenderType.SURFACEVIEW;
-import static cn.nodemedia.NodePlayerView.RenderType.TEXTUREVIEW;
-import static cn.nodemedia.NodePlayerView.UIViewContentMode.ScaleToFill;
+import static qwikcut.nodemedia.NodePlayerView.RenderType.SURFACEVIEW;
+import static qwikcut.nodemedia.NodePlayerView.RenderType.TEXTUREVIEW;
+import static qwikcut.nodemedia.NodePlayerView.UIViewContentMode.ScaleToFill;
 
 
 /**

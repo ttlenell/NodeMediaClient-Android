@@ -1,4 +1,4 @@
-package cn.nodemedia;
+package qwikcut.nodemedia;
 
 import org.junit.Test;
 

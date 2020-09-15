@@ -1,4 +1,4 @@
-package cn.nodemedia;
+package qwikcut.nodemedia;
 
 import android.content.Context;
 import android.media.AudioManager;
