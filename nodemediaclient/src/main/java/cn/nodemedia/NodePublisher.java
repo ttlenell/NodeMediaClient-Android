@@ -238,6 +238,14 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
         return mNodeCameraView.setAutoFocus(autoFocus);
     }
 
+    public int setZoom(float zoomScale) {
+        if (mNodeCameraView == null) {
+            return -1;
+        }
+        mNodeCameraView.setZoom(zoomScale);
+        return 0;
+    }
+
     public void capturePicture(CapturePictureListener listener) {
         this.mCapturePictureListener = listener;
         jniRequestScreenShot();
