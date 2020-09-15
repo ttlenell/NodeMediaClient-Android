@@ -1,4 +1,4 @@
-package qwikcut.nodemedia;
+package cn.nodemedia;
 
 /**
  * Created by ALiang on 17/2/16.

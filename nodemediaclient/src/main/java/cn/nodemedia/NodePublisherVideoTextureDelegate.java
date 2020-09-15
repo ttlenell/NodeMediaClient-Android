@@ -1,4 +1,4 @@
-package qwikcut.nodemedia;
+package cn.nodemedia;
 
 public interface NodePublisherVideoTextureDelegate {
     void onCreateTextureCallback(NodePublisher streamer);

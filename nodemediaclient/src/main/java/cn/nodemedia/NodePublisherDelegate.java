@@ -1,4 +1,4 @@
-package qwikcut.nodemedia;
+package cn.nodemedia;
 
 /**
  * Created by ${$USER_NAME} on 17/4/19.

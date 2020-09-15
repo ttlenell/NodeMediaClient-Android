@@ -1,4 +1,4 @@
-package qwikcut.nodemedia;
+package cn.nodemedia;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -25,8 +25,8 @@ import java.util.List;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import static qwikcut.nodemedia.NodePublisher.CAMERA_BACK;
-import static qwikcut.nodemedia.NodePublisher.CAMERA_FRONT;
+import static cn.nodemedia.NodePublisher.CAMERA_BACK;
+import static cn.nodemedia.NodePublisher.CAMERA_FRONT;
 
 
 /**

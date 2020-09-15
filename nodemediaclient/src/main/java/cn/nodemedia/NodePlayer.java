@@ -1,4 +1,4 @@
-package qwikcut.nodemedia;
+package cn.nodemedia;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -175,7 +175,6 @@ public class NodePlayer implements NodePlayerView.RenderCallback {
     public void setSubscribe(boolean subscribe) {
         this.subscribe = subscribe;
     }
-
 
     public void setPlayerView(@NonNull NodePlayerView npv) {
         mNodePlayerView = npv;
